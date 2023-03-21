@@ -1,0 +1,85 @@
+built-in-modules
+1.OS
+2.PATH
+3.FS(File System)
+4.HTTP
+
+FOR DOC- https://nodejs.org/dist/latest-v18.x/docs/api/
+
+1.os- IT GIVES MORE PROPERTIES AND METHODS TO INTERACT WITH OS AND SERVER
+
+2.path- like it gives absolute path of file,basname and separator to the files
+
+ex:absolute path=C:\Users\MISAILAK\Desktop\nodejstutorial\content\subfolder\test.txt
+    basename: test.txt
+    sep(separator): content\subfolder\test.txt
+
+3.FS- for interacting with file
+   --asynchronously non-blocking  -more prefer
+   --synchronously blocking
+
+    -SYNC
+   -in readFileSync method we give 2 parameters-1.path of file, 2. what is the encoding(here for encoding we r using utf8(inka ascii,binary,base64))
+   -writeFileSync-(path,content)
+
+    -ASYNC
+    -READfILE(PATH,CALLBACK FN)   
+
+    sync-js reading the code synchronuously,it just goes line by line..its take long time then our application will go down.no other user cxan do anything with application
+
+   async-asynch-  we just off load the "readfile" and continue with code. so other users can use the application code
+
+
+   "CALL BACKS" are some what messy -  alternatives are -promises 
+   and async await  (easy)
+
+   callbacks are a special type of function passed as an argument to another function. They're called when the function that contains the callback as an argument completes its execution, and allows the code in the callback to run in the meantime. Callbacks help us make asynchronous calls.
+
+
+4.HTTP: WHICH IS GOING TO allow us to set up web server
+
+  req=represents incoming request-ex:if client is requesting fron web browser,so or web page will have info about the method and all the stuff in that request object.
+  rep=what we are sending back  (//we are send back this result=response according to the request)
+
+   res(response-object) have some methods
+   1.write
+   2.end -after sending back the response,we will end request
+
+   webserver-
+   what they do-
+   keep on listening to
+
+
+   url-for what address client is addressing
+
+
+NPM=node package manager package
+enables us to do 3 things
+-reuse our own code in other projects
+-use code written by other developers
+
+**url:npmjs.com**
+
+npm --version
+local dependency -use it only inparticular project
+npm i <packageName>
+
+global dependency-use it in any project
+npm install -g <packageName>
+
+package.json-manifest file(stores important info about project/package and it contains dependencies)
+  //manual approach(create package.json in the root,create properties etc.)
+  //npm init (step by step ,press enter to skip)
+  //npn init -y(everything default)
+   -so,if we install any loacl packages it will save as "dependencies" in package.json file.
+   and also all these dependensies will store in "node modules " folder ,which was create by npm .
+
+   -so some packages use  more dependencies,they will automatically installed as well.
+   ex:npm i bootstrap
+
+
+.**gitignore**   --which files can be ignored by source control(git)
+    -git init
+    -git add .
+    -git commit -m "first commit"
+  
