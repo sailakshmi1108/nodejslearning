@@ -1,3 +1,7 @@
+**https://youtu.be/Oe421EPjeBE**
+https://course-api.com/
+https://johnsmilga.com/
+
 built-in-modules
 1.OS
 2.PATH
@@ -67,19 +71,113 @@ npm i <packageName>
 global dependency-use it in any project
 npm install -g <packageName>
 
+
 package.json-manifest file(stores important info about project/package and it contains dependencies)
   //manual approach(create package.json in the root,create properties etc.)
   //npm init (step by step ,press enter to skip)
   //npn init -y(everything default)
-   -so,if we install any loacl packages it will save as "dependencies" in package.json file.
-   and also all these dependensies will store in "node modules " folder ,which was create by npm .
+   -so,if we install any local packages it will save as "dependencies(just  **dependency name and version ****we can see)" in package.json file.
+   and also all these dependencies will store in "**node modules** " folder(**dependencies full details**and also can see files that they are dependent on) ,which was create by npm .
 
    -so some packages use  more dependencies,they will automatically installed as well.
    ex:npm i bootstrap
 
 
 .**gitignore**   --which files can be ignored by source control(git)
-    -git init
+    -git init   (//error-sol:https://www.youtube.com/watch?v=h6xnrdn5sQc)    close vs code and open
     -git add .
     -git commit -m "first commit"
+    then 
+    copy the 3 command of your repository and execute in terminal in order to "get remote url".    
+    git remote add origin https://github.com/sailakshmi1108/nodejslearning.git
+    git branch -M main
+    git push -u origin main
+
+   **package.json use**-
+   this folder we dont get in git.but bcz of package.json we can share the code 
+without dragging massive "node modules folder" with us.we can just simply provide what 
+packages our project is using and then once we get repo then we just run "npm install"command,then npm will install all the packages that are in the dependencies
+
+
+for production purpose :  npm i nodemon --save-dev     
+   - we can the devDepency name as "nodemon": "^2.0.21" in package.json
+
+
+npm uninstall <packagename>
+another way:
+    delete nodemodules folder
+    delete packagelock.json
+    and remove that denedency(ex:bootstrap) from package.json
+
+
+start in package,json : when we give "npm start" it will run the nodemon.app.js file
+
+
+**NPX**
+    EXECUTE
+    package runner 
+
+
+
+**EVENT LOOP**  ::  
+
+     ** **https://course-api.com/****    -SLIDES 
   
+     --we can offload time consuming operations.
+       -javascript is synchronous,single thraded,line by line executed. ex:after call back fn only next task will be executed,it will take lot of time..rather than waiting for till call back fn executed for moving next task,we can resolve this by "offload" to the callback fn.
+
+       The setTimeout() method(asynchronous) is used to call a function after a certain period of time. The setInterval()((-asynchronous)) Javascript method is used to call a function "repeatedly" at a specified interval of time.
+
+**PROMISES**
+      Promise is a placeholder for a value that will be available in the future, allowing us to handle the result of an asynchronous task once it has completed or encountered an error. Promises make writing asynchronous code easier. They're an improvement on the callback pattern and very popular in Node.
+
+      
+      Inside an async function, you can use the await keyword before a call to a function that returns a promise. This makes the code wait at that point until the promise is settled, at which point the fulfilled value of the promise is treated as a return value, or the rejected value is thrown.
+
+
+      # promise anedhi settle ayintha varaki **await** fn wait chetsundhi..so,settle ayinaka appudu await function excute avuthundhi ante values ni return chestadhi(may be promise value use chesukovachu) like "synchronous" la work chestadhi.
+
+      
+
+      ****#  promises are special objects that help you perform "asynchronous" operations**.(ante ee promise vunna fn result kosam wait cheyakunda next fn first print avudhi,tharvatha promise dhi result- "2-await-pattern.js" )**we will pass the callbacks into that. promise is like good pattern compare with "11-fs-async" file.
+      indhulo lo 2 times file ni read cheyataniki 2 fns rasamu . so ala rayakunda promise fn lo okasari create chesi,then aa result ni use chesi 2nd file create chesamu.
+
+
+    **EVENT module**:
+    by using events you can create, fire, and listen for your events.
+        2-methods:
+       on (-pass (event name,callback fn)-listen for an event
+       emit (pass event name)-emit an event
+
+       event emitter:An event emitter is a pattern that listens to a named event, fires a callback, then emits(will get response) that event with a value.
+
+    **STREAM**: These streams can be used to read and write data from files. Pipes can be used to connect multiple streams together.
+
+        if we taking the approach of sync/async- we reading the whole file ,we are assigning to ove variable,if it is big file,uses whole memory, as file size gets bigger and bigger eventually variable is not good enough..will get error as size problem..
+        solution: stream
+
+
+    
+    HOW THE WEB WORKS ? (HOW WE EXCHANGE DATA ON WEB)
+
+                We are entering web url-that is we are  requesting to that server(server-responsible for serveing the resources). then server sends you back the response.that is done by "http protocol"(http messages).
+user sends the http request messages and then server send http response messages.
+
+
+url-address
+header=meta inf about request
+optional body-if u want to add the resource to the server,then we use this body ,also u r expected to provide data .this is called "payload"
+
+(from browser) request->here -server is node/express -> response ->browser
+
+
+both req and response messages have - start line,optional headers,
+etc.
+
+in response message
+status code:200 (req was success.amd server wea sending the response)
+      :400 (req failed)
+	:401 (resource was not found)
+remote address=ip address
+
+
