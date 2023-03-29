@@ -85,13 +85,13 @@ package.json-manifest file(stores important info about project/package and it co
 
 .**gitignore**   --which files can be ignored by source control(git)
     -git init   (//error-sol:https://www.youtube.com/watch?v=h6xnrdn5sQc)    close vs code and open
-    -git add .
-    -git commit -m "first commit"
+    1-git add .
+    2-git commit -m "first commit"
     then 
     copy the 3 command of your repository and execute in terminal in order to "get remote url".    
-    git remote add origin https://github.com/sailakshmi1108/nodejslearning.git
-    git branch -M main
-    git push -u origin main
+            git remote add origin https://github.com/sailakshmi1108/nodejslearning.git
+            git branch -M main
+    3-git push -u origin main
 
    **package.json use**-
    this folder we dont get in git.but bcz of package.json we can share the code 

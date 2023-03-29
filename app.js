@@ -1,13 +1,30 @@
-const { createReadStream } = require('fs')
+const { readFile, writeFile } = require('fs')
 
-// default 64kb
-// last buffer - remainder
-// highWaterMark - control size
-// const stream = createReadStream('./content/big.txt', { highWaterMark: 90000 })
-// const stream = createReadStream('../content/big.txt', { encoding: 'utf8' })
-const stream = createReadStream('./content/big.txt')
-
-stream.on('data', (result) => {
-  console.log(result)
+console.log('start')   //1st
+readFile('./content/first.txt', 'utf8', (err, result) => {
+  if (err) {
+    console.log(err)
+    return
+  }
+  const first = result
+  readFile('./content/second.txt', 'utf8', (err, result) => {
+    if (err) {
+      console.log(err)
+      return
+    }
+    const second = result
+    writeFile(
+      './content/result-async.txt',
+      `Here is the result : ${first}, ${second}`,
+      (err, result) => {
+        if (err) {
+          console.log(err)
+          return
+        }
+        // console.log(result)
+        console.log("done")    //3rd
+      }
+    )
+  })
 })
-stream.on('error', (err) => console.log(err))
+console.log("next")  //2nd..asynch-  we just off load the "readfile" and continue with code. so other users can use the application code

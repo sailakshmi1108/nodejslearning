@@ -1,0 +1,134 @@
+express js is framework   for nodejs/js...
+fast,some features...
+
+js uses over ts
+every browser can understand js..
+ts uses over js:
+but browser cant understand typescript-after we are compile into js.
+-we have some extra features like-
+	-strong typing-meand when we define a variable we need to define the variable type.so,our application more predictable and easy to debug. ex:
+	-oops like class,interface,constructor,access modifier,fields,properties,generics etc.
+	-we can catch our errors while compile time only
+	TS----transpile/compile--->JS
+	
+
+
+    **https://youtu.be/Oe421EPjeBE**
+https://course-api.com/
+https://johnsmilga.com/
+
+res.writeHead
+(we r providing header=metadata about our response)
+res.writeHead(status code,{content type})
+
+if data is specified then then it is similar to 
+res.write() followed by res.end(callback) is same as res.end()
+
+
+expressjs.com
+express js -fraeamework for node js
+$npm install express --save
+api preferences: version 4.17
+express is better than http for setting up server !
+
+
+The app.all() function is used to route all types of HTTP requests. Like if we have POST, GET, PUT, DELETE, etc, requests made to any specific route, let’s say /user, so instead of defining different APIs like app.post(‘/user’), app.get(‘/user’), etc, we can define single API app.all(‘/user’) which will accept all type of HTTP request. 
+
+Syntax:
+
+app.all( path, callback )
+
+
+2. app.use(express.static('./public'))
+		using express -no need to set up content type,status code etc. and we have to create path for every resouce in code like "http", just use app.use and creat the folder and copy the static files in that.
+-here static file means that is the file that server doesn't have to change it. ex:image file,style file,js file
+ *app.use for setting up the middleware
+
+SSR-server side rendering
+	we will set up the template and send back entire html,css,js.    will do using  "res.render"methos
+
+API
+our data will sent using json(js object notation),
+to send response back we r using "res.json" method(express) which have content type etc.
+
+params-u can access the data
+api/products/:PRODUCTID/1    PRODUCTID/1=PARAMS
+api/products/PRODUCTID/1/REVIEWS/ABC  PRODUCTID/1/REVIEW/ABC=PARAMS
+
+query string parameters=url parameters
+    =to send small amount of inf to the server.
+
+..../serach?query=...  after ? ..that is specif inf about data that iam requesting
+
+slice method-we can get specific elements from array
+
+limit:2  --first 2 products will come
+
+
+middleware(express)=functions that execute during the request to the server.
+eaxch middleware fn has access to request and response objects
+
+The next() function is what you call to say "this middleware is done executing, pass this action to the next middleware".
+
+
+app.use -invoke the middleware fn to every route ,without adding that middleware fn to every route
+and it should be on the top of document
+
+
+REPL-READ EVALPRINT LOOP
+
+
+
+
+
+
+JWT::
+
+jwt usage--
+1. user authentication jariginaka further ga api calls cheyatam kosam
+2.edhyna sensitive data ni encrypt cheytaniki..
+like credit card inf/password ni encrypt cheyataniki
+
+
+"npm install jsonwebtoken" package ni download chesukovali.
+
+to import that package   
+- var jwt=require('jsonwebtoken')
+
+we have to give one secret value
+- const secretval='ljdhebd'
+
+to generate jwt
+- const token=jwt.sign(data{// id=5},secretvalue)
+-console.log("token::" ,token);   //token will be generated  'kunsh.kil.snnced'
+
+
+to verify
+jwt.verify(token,secretVal,function(err,decoded){
+console.log('decoded::",decoded);    // decoded:: id=5,ist=7846893782
+}
+//fn-call back fn
+//after verification information will be decrypted ,that will be stores in "decoded"  
+
+
+
+attributes:
+iss
+aud
+exp:token expiration time(ms)
+scope
+sub
+jti:unique identifier for the token
+alg:'HS256'  {//IF WE USE PUBLIC AND PRIVATE key 'RS256'}
+
+
+
+
+WITHOUT VERIFING ,we can decode the code using   "npm instal jwt-decode" package
+
+
+jwt token
+- 3 parts  ss.hh.hh
+-1st part = header  =algorithm, jwt type
+-2nd=payload =which data we are encrypting
+-3- signature
