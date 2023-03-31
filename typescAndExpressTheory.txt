@@ -137,3 +137,12 @@ jwt token
 
 LINTNG:    the process of applying rules on a codebase that help catch bugs and code patterns that violate those rules specified in a configuration file.
 https://www.section.io/engineering-education/node-eslint/
+
+
+
+
+The is a clear separation of the logic for every microservice, which is the follows:
+
+Controllers under XXX-ms/controllers are containing the tsoa controllers, which only implementing the controller logic. All controllers have to derrive from shared/controller-base.ts and have to use the protected method doControllerMethod() to wrap their service calls
+Services unders XXX-ms/services are containing the logic itself. In best case, every API call gets its own service.
+Repositories under XXX-ms/db/repositories are containing all database logic (Repository pattern!)
