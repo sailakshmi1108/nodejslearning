@@ -132,3 +132,8 @@ jwt token
 -1st part = header  =algorithm, jwt type
 -2nd=payload =which data we are encrypting
 -3- signature
+
+
+
+LINTNG:
+https://www.section.io/engineering-education/node-eslint/
