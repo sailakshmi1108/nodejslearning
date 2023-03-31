@@ -135,5 +135,5 @@ jwt token
 
 
 
-LINTNG:
+LINTNG:    the process of applying rules on a codebase that help catch bugs and code patterns that violate those rules specified in a configuration file.
 https://www.section.io/engineering-education/node-eslint/
