@@ -168,5 +168,7 @@ loose coupling-one obj dont depend on another obj.
 
 IOC  CONTAINER is responsible to create a object for u and then they will be injjecting in your class.
 
-
-Controller Layer: This layer will have all routes defined and call to a specific service layer's function
+ONION ARCHITECTURE:
+1.Controller Layer: This layer will have all routes defined and call to a specific service layer's function
+2.Service layer-where the main logic about api's is present
+3.Repository layer-where dayabase is manupulation will present like ,we can save the data and retrieve the data from database.
