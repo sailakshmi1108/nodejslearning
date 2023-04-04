@@ -146,3 +146,27 @@ The is a clear separation of the logic for every microservice, which is the foll
 Controllers under XXX-ms/controllers are containing the tsoa controllers, which only implementing the controller logic. All controllers have to derrive from shared/controller-base.ts and have to use the protected method doControllerMethod() to wrap their service calls
 Services unders XXX-ms/services are containing the logic itself. In best case, every API call gets its own service.
 Repositories under XXX-ms/db/repositories are containing all database logic (Repository pattern!)
+
+
+
+
+IOC-    if controlling the applicatiion class inverted (transformed) to third party class(ioc container)then it is called as 
+"Inversion Of Control".
+
+IoC Container (a.k.a. DI Container) is a framework for implementing automatic dependency injection. It manages object creation and it's life-time, and also injects dependencies to the class.
+
+2types:
+1.dependency lookup/pull
+2.dependency injection/push
+
+
+
+
+
+
+loose coupling-one obj dont depend on another obj.
+
+IOC  CONTAINER is responsible to create a object for u and then they will be injjecting in your class.
+
+
+Controller Layer: This layer will have all routes defined and call to a specific service layer's function
