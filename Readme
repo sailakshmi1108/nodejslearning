@@ -181,3 +181,66 @@ status code:200 (req was success.amd server wea sending the response)
 remote address=ip address
 
 
+
+nodemon is a tool that helps develop node. js based applications by automatically restarting the node application when file changes in the directory are detected.
+
+
+
+
+https://tsoa-community.github.io/docs/di.html
+
+
+
+# Create a new folder for our project
+mkdir tsoa-project
+cd tsoa-project
+
+# Create a package.json and initialize git
+git init
+yarn init -y       //created package.json
+
+# Add our dependencies
+yarn add tsoa express     //create package.lock.json
+yarn add -D typescript @types/node @types/express     //node modules folder
+
+# Initialize tsconfig.json
+(npx tsc --init --resolveJsonModule --target es6)
+npm run tsc --init
+
+npm install tsoa --save
+
+7.// "test": "echo \"Error: no test specified\" && exit 1"
+
+
+
+
+
+build-combine multiple JavaScript files into one single file or bundle that can be used in the browser to load your application.
+
+
+npm run tsc --init
+
+
+
+tsoa-
+we can get accurate,correct and uptodate open api specifications from our typescript code
+it is flexible for some framworks like express,koa,hapi etc.,in our projec we r using express js..
+and also tsoa applications are type-safe by default
+
+
+A regular expression (also called regex or regexp) is a way to describe a pattern. It is used to locate or validate specific strings or patterns of text in a sentence, document, or any other character input
+
+
+https://www.npmjs.com/package/express-register-routes
+
+*https://www.simplilearn.com/tutorials/nodejs-tutorial/body-parser-in-express-js
+
+CLI-command line interface
+
+nodemon is a tool -helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+y restarts the node application whenever it observes the changes in the file present in the working directory of your projec
+
+
+tsoa uses short descriptions provided via the JSDocannotation
+
+
